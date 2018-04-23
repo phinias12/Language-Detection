@@ -78,3 +78,23 @@ std::vector<int> freq(std::string text)
 
     return trigrams;
 }
+
+bigint summation(std::vector <int> freq1, std::vector <int> freq2){
+    bigint total = 0;
+    for (size_t i = 0; i < freq1.size(); i++){
+        total += (freq1[i] * freq2[i]);
+    }
+
+    return total;
+}
+
+float compare(std::vector <int> sum1, std::vector <int> sum2){
+    bigint top = summation(sum1, sum2).pow(2) * 1000000;
+    bigint bottomA = summation(sum1, sum1);
+    bigint bottomB = summation(sum2, sum2);
+    bigint bottom = bottomA * bottomB;
+    bigint couple = top / bottom;
+    std::string str = couple.to_string();
+    int final = std::stoi(str);
+    return final / 1000000.0;
+}
