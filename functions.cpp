@@ -89,11 +89,12 @@ bigint summation(std::vector <int> freq1, std::vector <int> freq2){
 }
 
 float compare(std::vector <int> sum1, std::vector <int> sum2){
-    float biggest = 0;
-    bigint top = pow(summation(sum1, sum2), 2) * 1000000;
+    bigint top = summation(sum1, sum2).pow(2) * 1000000;
     bigint bottomA = summation(sum1, sum1);
     bigint bottomB = summation(sum2, sum2);
     bigint bottom = bottomA * bottomB;
-    int couple = top / bottom;
-    return couple / 1000000.0;
+    bigint couple = top / bottom;
+    std::string str = couple.to_string();
+    int final = std::stoi(str);
+    return final / 1000000.0;
 }
