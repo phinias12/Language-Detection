@@ -21,12 +21,13 @@ int main(int argc, char *argv[]) {
     // MAKE YOUR OWN MAIN.
     ///////////////////////////////////////////////////////////////////
 
-    (void) argc;
+    // (void) argc;
     // (void) argv;
 
+    // Gets test
     std::ifstream infile;
     int frequency[LEN];
-    infile.open(argv[1]);
+    infile.open(argv[argc - 1]);
     std::string text = readFile(infile);
     std::vector<int> trigrams = freq(text);
 

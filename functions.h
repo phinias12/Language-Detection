@@ -24,4 +24,7 @@ int base26(std::string trigram);
 //Returns a vector of the trigrams. Header for freq.
 std::vector<int> freq(std::string text);
 
+//Calculates the summation of two vectors multiplied to each other.
+bigint summation(std::vector<int> freq1, std::vector<int> freq2);
+
 #endif
