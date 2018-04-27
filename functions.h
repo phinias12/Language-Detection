@@ -27,4 +27,7 @@ std::vector<int> freq(std::string text);
 //Calculates the summation of two vectors multiplied to each other.
 bigint summation(std::vector<int> freq1, std::vector<int> freq2);
 
+//Calculates the sin of the two vectors
+float compare(std::vector<int> sum1, std::vector<int> sum2);
+
 #endif

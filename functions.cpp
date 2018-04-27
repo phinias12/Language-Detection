@@ -22,7 +22,7 @@
 std::string readFile(std::ifstream &infile)
 {
     std::string text;
-    if (!infile.fail())
+    if (infile)
     {
         char ch;
         while (infile.get(ch))
@@ -32,11 +32,13 @@ std::string readFile(std::ifstream &infile)
                 text += ch;
             }
         }
+
+        infile.close();
     }
 
     else
     {
-        std::cerr << "readFile";
+        std::cerr << "readFile: " << std::endl;
     }
 
     return text;
